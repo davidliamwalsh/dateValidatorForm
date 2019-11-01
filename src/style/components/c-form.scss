@@ -1,0 +1,36 @@
+.c-form {
+  display: block;
+  margin: auto;
+  border: 3px solid $formborder;
+  background: $formbackground;
+  width: 50%;
+  margin-top: 2em;
+
+  &__container {
+    margin: 1em;
+  }
+
+  &__intro {
+    padding: .5em;
+  }
+
+  &__main {
+    display: block;
+    padding: .5em;
+  
+    &-input {
+      border-radius: 5px;
+    }
+  }
+
+  &__submit {
+    display: block;
+    padding: .5em;
+
+    &-btn {
+      border-radius: 5px;
+      padding: .2em;
+    }
+
+  }
+}
