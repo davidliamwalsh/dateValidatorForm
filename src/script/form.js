@@ -1,7 +1,7 @@
 const alertMessage = document.querySelector("div[data-behavior='alertMessage']")
-const form = document.querySelector("form[data-behavior='form']").addEventListener('submit', dateCheck)
+const form = document.querySelector("form[data-behavior='form']")
 const dateInput = document.querySelector("input[data-behavior='dateInput']")
-const regex = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+const regex = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/;
 
 function dateCheck(e) {
   let message = []
@@ -19,5 +19,7 @@ function dateCheck(e) {
   }
   e.preventDefault()
 }
+
+form.addEventListener('submit', dateCheck)
 
 module.exports = dateCheck
