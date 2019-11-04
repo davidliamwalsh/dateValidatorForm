@@ -14,4 +14,5 @@ test("correct input for date", async () => {
   const message = await page.$eval('[data-test=alertMessage]', el => el.textContent)
 
   expect(message).toEqual('Valid date')
+  expect(message).not.toEqual('Valid date is required')
 })
