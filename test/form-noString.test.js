@@ -1,17 +1,17 @@
 const puppeteer = require('puppeteer');
 
-test("correct input for date", async () => {
+test("missing string date input", async () => {
   const browser = await puppeteer.launch()
   const page = await browser.newPage()
   await page.goto('http://localhost:8080')
 
   await page.click('#dateInput')
-  await page.type('#dateInput', '26/12/1985')
+  await page.type('#dateInput', '')
   await page.click('#submitBtn')
 
-  // await page.screenshot({path: 'form.png'})
+  // await page.screenshot({path: 'form-noString.png'})
 
   const message = await page.$eval('[data-test=alertMessage]', el => el.textContent)
 
-  expect(message).toEqual('Valid date')
+  expect(message).toEqual('Valid date is required')
 })
